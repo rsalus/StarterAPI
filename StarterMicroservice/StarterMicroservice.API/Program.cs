@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Create our (in-memory) database
 builder.Services.AddDbContext<MyUserContext>(opt => opt.UseInMemoryDatabase("StarterDb"));
 
-// Add our swagger doc
+// Add our swagger schema
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "StarterMicroservice API", Version = "v1" });
@@ -17,7 +18,7 @@ builder.Services.AddSwaggerGen(options =>
 // Build the application
 var app = builder.Build();
 
-// Add Swagger page
+// Create our Swagger page
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
