@@ -30,19 +30,19 @@ else
 // It is also possible to specify the exact image to use:
 // .WithImage
 // .WithImageTag
-var mySql = (builder.Environment.IsProduction()) switch
+var server = (builder.Environment.IsProduction()) switch
 {
     true  => builder.AddConnectionString("StarterDb"),
-    false => builder.AddMySql("MyServer")
+    false => builder.AddSqlServer("MyServer")
 };
 
 // This is not actually creating a database
 // It is creating a CONNECTION STRING for a database
 // The provisioning is still required to happen before runtime
 // We accomplish this by using EF Core migrations at startup
-var starterDb = (mySql is IResourceBuilder<MySqlServerResource> server)
-    ? server.AddDatabase("StarterDb")
-    : mySql;
+var starterDb = (server is IResourceBuilder<SqlServerServerResource> sql)
+    ? sql.AddDatabase("StarterDb")
+    : server;
 
 // Add projects to Aspire management
 // with references to the resources

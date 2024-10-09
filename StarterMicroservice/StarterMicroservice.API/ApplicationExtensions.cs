@@ -43,7 +43,7 @@ namespace StarterMicroservice.API
             builder.Services.AddLogging();
 
             // Database
-            builder.AddMySqlDbContext<MyUserContext>("StarterDb");
+            builder.AddSqlServerDbContext<MyUserContext>("StarterDb");
 
             // Swagger
             builder.Services.AddSwaggerGen(options =>
