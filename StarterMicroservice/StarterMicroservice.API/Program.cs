@@ -1,12 +1,15 @@
+//  ADD OUR FIRST CODE HERE
+//  =======================
+
+
+
+/*
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using StarterMicroservice.API;
 
 // Create the application
 var builder = WebApplication.CreateBuilder(args);
-
-// Create our (in-memory) database
-builder.Services.AddDbContext<MyUserContext>(opt => opt.UseInMemoryDatabase("StarterDb"));
 
 // Add our swagger schema
 builder.Services.AddEndpointsApiExplorer();
@@ -31,4 +34,6 @@ app.UseSwaggerUI(c =>
 //  These will form the basis of our CRUD
 //  operations.
 
+
 app.Run();
+*/
