@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace StarterMicroservice.API
+namespace StarterAPI
 {
     public class MyUserContext(DbContextOptions<MyUserContext> options) : DbContext(options)
     {

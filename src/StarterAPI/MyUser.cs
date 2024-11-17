@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace StarterMicroservice.API
+namespace StarterAPI
 {
     public class MyUser(int userId)
     {

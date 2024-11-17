@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarterMicroservice.API", "StarterMicroservice.API\StarterMicroservice.API.csproj", "{19490929-C858-479B-B6D9-9212E3062B78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarterAPI", "StarterAPI\StarterAPI.csproj", "{19490929-C858-479B-B6D9-9212E3062B78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

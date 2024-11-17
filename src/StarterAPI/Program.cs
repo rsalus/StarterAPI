@@ -5,7 +5,7 @@
 
 /*
 using Microsoft.EntityFrameworkCore;
-using StarterMicroservice.API;
+using StarterAPI;
 
 // Create the application
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +24,7 @@ var app = builder.Build();
 app.MapOpenApi();
 app.UseSwaggerUI(options =>
 {
-    options.SwaggerEndpoint("/openapi/v1.json", "StarterMicroservice.API v1");
+    options.SwaggerEndpoint("/openapi/v1.json", "StarterAPI v1");
 });
 
 //  ADD OUR API CODE HERE
