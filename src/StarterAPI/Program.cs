@@ -33,7 +33,27 @@ app.UseSwaggerUI(options =>
 //  These will form the basis of our CRUD
 //  operations.
 
+app.MapPut("/CreateUser", (int userId, MyUserContext context) =>
+{
+    var user = new MyUser(userId);
+    context.Users.Add(user);
+    context.SaveChanges();
+    return;
+});
 
+app.MapGet("/GetUser", (int userId, MyUserContext context) =>
+{
+    var user = context.Users.Find(userId);
+    return user;
+});
+
+app.MapDelete("/DeleteUser", (int userId, MyUserContext context) =>
+{
+    var user = context.Users.Find(userId);
+    context.Users.Remove(user);
+    context.SaveChanges();
+    return;
+});
 
 app.Run();
 */
