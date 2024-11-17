@@ -1,7 +1,10 @@
-﻿namespace StarterMicroservice.API
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace StarterMicroservice.API
 {
-    public class MyUser
+    public class MyUser(int userId)
     {
-        public int UserId { get; set; }
+        [Key]
+        public int UserId { get; set; } = userId;
     }
 }

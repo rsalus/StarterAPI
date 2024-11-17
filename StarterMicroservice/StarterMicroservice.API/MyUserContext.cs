@@ -4,6 +4,6 @@ namespace StarterMicroservice.API
 {
     public class MyUserContext(DbContextOptions<MyUserContext> options) : DbContext(options)
     {
-        public DbSet<MyUser> Users { get; set; }
+        public required DbSet<MyUser> Users { get; set; }
     }
 }

@@ -5,27 +5,26 @@
 
 /*
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using StarterMicroservice.API;
 
 // Create the application
 var builder = WebApplication.CreateBuilder(args);
 
-// Add our swagger schema
+// Add our database
+builder.Services.AddDbContext<MyUserContext>(opt => opt.UseInMemoryDatabase("StarterDb"));
+
+// Add our schema
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "StarterMicroservice API", Version = "v1" });
-});
+builder.Services.AddOpenApi();
 
 // Build the application
 var app = builder.Build();
 
 // Create our Swagger page
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+app.MapOpenApi();
+app.UseSwaggerUI(options =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "StarterMicroservice.API v1");
+    options.SwaggerEndpoint("/openapi/v1.json", "StarterMicroservice.API v1");
 });
 
 //  ADD OUR API CODE HERE
@@ -33,6 +32,7 @@ app.UseSwaggerUI(c =>
 //  We want a Get, Put, and Delete method
 //  These will form the basis of our CRUD
 //  operations.
+
 
 
 app.Run();
