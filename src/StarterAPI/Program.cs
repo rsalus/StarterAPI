@@ -11,7 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MyUserContext>(opt => opt.UseInMemoryDatabase("StarterDb"));
 
 // Add our schema
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
 // Build the application
