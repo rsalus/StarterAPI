@@ -1,9 +1,6 @@
 //  ADD OUR FIRST CODE HERE
 //  =======================
 
-
-
-/*
 using Microsoft.EntityFrameworkCore;
 using StarterAPI;
 
@@ -56,4 +53,3 @@ app.MapDelete("/DeleteUser", (int userId, MyUserContext context) =>
 });
 
 app.Run();
-*/
